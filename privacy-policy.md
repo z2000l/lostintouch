@@ -26,8 +26,6 @@ what data Intouch collects, why, and how it's handled.
 
 ## What we don't do
 
-- No advertising or ad tracking.
-- No selling or sharing your data with third parties for marketing.
 - No public profiles — content is only visible to people you've
   specifically connected with and opted to share with.
 - No read receipts on requests or invites.
