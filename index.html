@@ -1,350 +1,337 @@
 <meta charset="utf-8">
-<title>Lost in Touch — Privacy Policy</title>
+<title>Lost in Touch — stay close, without pressure</title>
 <style>
   :root {
-    --bg: #f6f7fa;
-    --surface: #ffffff;
-    --text: #14171c;
-    --text-muted: #5b6472;
-    --accent: #3e63c9;
-    --accent-mark: #5680e0;
-    --accent-mark-2: #dedee0;
-    --accent-soft: #ebf0fc;
-    --border: #e2e5eb;
-    --focus: #3e63c9;
+    --bg: #0f0f10;
+    --bg-2: #141416;
+    --surface: #18191c;
+    --surface-2: #1d1f23;
+    --text: #f3f4f6;
+    --muted: #9aa2b1;
+    --muted-2: #6d7480;
+    --accent: #5680e0;
+    --accent-2: #86a6ea;
+    --border: #27292e;
 
-    --font-display: ui-serif, "Iowan Old Style", Charter, Georgia, serif;
+    --font-display: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
     --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
     --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #111111;
-      --surface: #17181a;
-      --text: #f0f1f3;
-      --text-muted: #9ba3b0;
-      --accent: #8fabee;
-      --accent-mark: #7b9ceb;
-      --accent-mark-2: #3a3d42;
-      --accent-soft: #1a2130;
-      --border: #2a2c30;
-      --focus: #8fabee;
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --bg: #111111;
-    --surface: #17181a;
-    --text: #f0f1f3;
-    --text-muted: #9ba3b0;
-    --accent: #8fabee;
-    --accent-mark: #7b9ceb;
-    --accent-mark-2: #3a3d42;
-    --accent-soft: #1a2130;
-    --border: #2a2c30;
-    --focus: #8fabee;
-  }
-
   * { box-sizing: border-box; }
 
-  body {
+  html, body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
     font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  a { color: var(--accent); text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent); text-underline-offset: 2px; }
-  a:hover { text-decoration-color: var(--accent); }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+  a { color: var(--accent-2); text-decoration-color: color-mix(in srgb, var(--accent-2) 40%, transparent); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--accent-2); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; border-radius: 3px; }
 
-  .page {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 0 24px 96px;
-  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
 
-  /* ---------- header ---------- */
+  /* ---------------- nav ---------------- */
 
-  header.mast {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 40px 0 28px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .mark {
-    position: relative;
-    width: 34px;
-    height: 34px;
-    flex: none;
-  }
-  .mark span {
-    position: absolute;
-    top: 4px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-  }
-  .mark span:first-child { left: 0; background: var(--accent-mark-2); }
-  .mark span:last-child { left: 10px; background: var(--accent-mark); mix-blend-mode: normal; opacity: 0.92; }
-
-  .mast-text { display: flex; flex-direction: column; gap: 2px; }
-  .mast-app { font-family: var(--font-display); font-size: 19px; font-weight: 600; letter-spacing: 0.1px; }
-  .mast-doc { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
-
-  /* ---------- title block ---------- */
-
-  .title-block { padding: 44px 0 8px; max-width: 640px; }
-  h1 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(28px, 4vw, 38px);
-    line-height: 1.15;
-    margin: 0 0 14px;
-    text-wrap: balance;
-  }
-  .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 18px;
-    font-family: var(--font-mono);
-    font-size: 12.5px;
-    color: var(--text-muted);
-    margin-bottom: 18px;
-  }
-  .meta b { color: var(--text); font-weight: 600; }
-  .lede { color: var(--text-muted); font-size: 16.5px; max-width: 60ch; }
-
-  /* ---------- layout: nav + article ---------- */
-
-  .layout {
-    display: grid;
-    grid-template-columns: 200px minmax(0, 680px);
-    gap: 56px;
-    align-items: start;
-    margin-top: 36px;
-  }
-
-  nav.toc {
+  nav.top {
     position: sticky;
-    top: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding-top: 6px;
-  }
-  nav.toc a {
-    font-size: 13px;
-    color: var(--text-muted);
-    text-decoration: none;
-    padding: 6px 0 6px 12px;
-    border-left: 2px solid var(--border);
-    transition: color 0.15s ease, border-color 0.15s ease;
-  }
-  nav.toc a:hover { color: var(--text); border-left-color: var(--accent-mark); }
-
-  article section {
-    padding: 34px 0;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
   }
-  article section:last-of-type { border-bottom: none; padding-bottom: 0; }
+  nav.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; padding-bottom: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-mark { position: relative; width: 26px; height: 26px; flex: none; }
+  .brand-mark span { position: absolute; top: 3px; width: 18px; height: 18px; border-radius: 50%; }
+  .brand-mark span:first-child { left: 0; background: #dedee0; }
+  .brand-mark span:last-child { left: 8px; background: var(--accent); opacity: 0.92; }
+  .brand-name { font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: 0.1px; }
+  .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--muted); }
+  .nav-links a { color: var(--muted); text-decoration: none; }
+  .nav-links a:hover { color: var(--text); }
 
-  h2 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 22px;
-    margin: 0 0 16px;
-    padding-left: 14px;
-    border-left: 3px solid var(--accent-mark);
-    text-wrap: balance;
+  /* ---------------- hero ---------------- */
+
+  header.hero { position: relative; padding: 96px 0 88px; overflow: hidden; }
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(110px);
+    pointer-events: none;
   }
+  .glow-a { width: 560px; height: 560px; background: var(--accent); opacity: 0.22; top: -220px; right: -120px; }
+  .glow-b { width: 420px; height: 420px; background: #dedee0; opacity: 0.05; bottom: -260px; left: -140px; }
 
-  p { margin: 0 0 14px; max-width: 66ch; }
-  p:last-child { margin-bottom: 0; }
-
-  ul.data-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
-  ul.data-list li { max-width: 66ch; }
-  ul.data-list b { font-weight: 600; }
-
-  ul.plain { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
-  ul.plain li { max-width: 62ch; }
-
-  .services { display: flex; flex-direction: column; gap: 18px; }
-  .service {
-    display: grid;
-    grid-template-columns: 128px minmax(0, 1fr);
-    gap: 4px 20px;
-    align-items: baseline;
-  }
-  .service dt { font-family: var(--font-mono); font-size: 13px; color: var(--accent); font-weight: 600; }
-  .service dd { margin: 0; max-width: 56ch; }
-
-  .callout {
-    background: var(--accent-soft);
-    border-radius: 10px;
-    padding: 18px 20px;
-    margin-top: 18px;
-    font-size: 14.5px;
-    color: var(--text);
-  }
-  .callout b { font-weight: 600; }
-
-  .contact-card {
+  .hero-inner { position: relative; max-width: 640px; }
+  .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    border-radius: 100px;
+    padding: 6px 14px;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(38px, 6vw, 60px);
+    line-height: 1.06;
+    letter-spacing: -0.5px;
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  h1 em { font-style: normal; color: var(--accent-2); }
+  .hero-sub { font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 52ch; margin: 0 0 34px; }
+
+  .hero-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .btn {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 13px 22px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary { background: var(--text); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent-2); }
+  .btn-ghost { color: var(--text); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--muted-2); }
+
+  /* ---------------- features ---------------- */
+
+  section.features { padding: 8px 0 96px; }
+  .section-head { max-width: 560px; margin-bottom: 44px; }
+  .section-kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 10px; }
+  h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 3vw, 30px); margin: 0; text-wrap: balance; }
+
+  .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .feature {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 18px;
-    font-family: var(--font-mono);
+    border-radius: 16px;
+    padding: 26px 26px 28px;
+  }
+  .feature-title { font-family: var(--font-display); font-weight: 700; font-size: 17px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+  .feature p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.6; max-width: 42ch; }
+
+  .not-row {
+    margin-top: 22px;
+    display: flex;
+    gap: 10px 22px;
+    flex-wrap: wrap;
+    font-size: 13.5px;
+    color: var(--muted-2);
+  }
+  .not-row span { display: inline-flex; align-items: center; gap: 7px; }
+  .not-row span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--muted-2); }
+
+  /* ---------------- sms panel ---------------- */
+
+  section.sms { padding: 0 0 96px; }
+  .sms-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 44px 44px 40px;
+  }
+  .sms-card h2 { margin-bottom: 8px; }
+  .sms-lede { color: var(--muted); font-size: 15px; max-width: 60ch; margin: 0 0 30px; }
+
+  .sms-grid {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    row-gap: 18px;
+    column-gap: 24px;
     font-size: 14.5px;
   }
+  .sms-grid dt { font-family: var(--font-mono); color: var(--accent-2); font-weight: 600; font-size: 13px; padding-top: 2px; }
+  .sms-grid dd { margin: 0; color: var(--text); line-height: 1.6; max-width: 56ch; }
+  .sms-grid dd.muted { color: var(--muted); }
 
-  footer.foot {
-    margin-top: 44px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
+  .consent-sample {
+    margin-top: 28px;
+    background: var(--bg-2);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 13.5px;
+    color: var(--muted);
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
     gap: 12px;
-    flex-wrap: wrap;
-    font-size: 12.5px;
-    color: var(--text-muted);
+  }
+  .consent-sample .check {
+    flex: none;
+    width: 17px; height: 17px;
+    margin-top: 2px;
+    border-radius: 4px;
+    border: 1.5px solid var(--accent-2);
+    background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bg);
+    font-size: 11px;
+    font-weight: 800;
   }
 
-  @media (max-width: 760px) {
-    .layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
-    nav.toc {
-      position: static;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 4px 16px;
-      padding-bottom: 8px;
-      margin-bottom: 8px;
-    }
-    nav.toc a { border-left: none; border-bottom: 2px solid var(--border); padding: 4px 0; }
-    .service { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  /* ---------------- footer ---------------- */
+
+  footer.foot { border-top: 1px solid var(--border); padding: 40px 0 48px; }
+  .foot-grid { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .foot-col { display: flex; flex-direction: column; gap: 10px; font-size: 13.5px; }
+  .foot-col .head { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 4px; }
+  .foot-col a { color: var(--muted); text-decoration: none; }
+  .foot-col a:hover { color: var(--text); }
+  .foot-legal { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; color: var(--muted-2); }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+    header.hero { padding: 64px 0 56px; }
+    .feature-grid { grid-template-columns: minmax(0, 1fr); }
+    .sms-card { padding: 30px 22px 28px; }
+    .sms-grid { grid-template-columns: minmax(0, 1fr); row-gap: 4px; }
+    .sms-grid dt { padding-top: 10px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    nav.toc a { transition: none; }
+    * { scroll-behavior: auto !important; }
   }
 </style>
 
-<div class="page">
-
-  <header class="mast">
-    <div class="mark"><span></span><span></span></div>
-    <div class="mast-text">
-      <span class="mast-app">Lost in Touch</span>
-      <span class="mast-doc">Legal · Privacy Policy</span>
+<nav class="top">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark"><span></span><span></span></div>
+      <span class="brand-name">Lost in Touch</span>
     </div>
-  </header>
-
-  <div class="title-block">
-    <h1>Privacy Policy</h1>
-    <div class="meta">
-      <span><b>Last updated</b> — August 11, 2026</span>
-      <span><b>Operated by</b> — Propersh LLC, propersh.com</span>
+    <div class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#texting">Texting &amp; SMS</a>
+      <a href="privacy-policy.html">Privacy</a>
     </div>
-    <p class="lede">This policy explains what data Lost in Touch collects, why, and how it's handled — in plain language, section by section.</p>
   </div>
+</nav>
 
-  <div class="layout">
-    <nav class="toc" aria-label="Sections">
-      <a href="#collect">Data we collect</a>
-      <a href="#dont">What we don't do</a>
-      <a href="#shared">How data is shared</a>
-      <a href="#third-party">Third-party services</a>
-      <a href="#retention">Retention &amp; deletion</a>
-      <a href="#children">Children's privacy</a>
-      <a href="#changes">Changes</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <article>
-
-      <section id="collect">
-        <h2>Data we collect</h2>
-        <ul class="data-list">
-          <li><b>Phone number.</b> Used to identify your account (sign-in via SMS code) and to let you add people you're in touch with by phone number.</li>
-          <li><b>Name.</b> The display name you enter, shown to people you're in touch with.</li>
-          <li><b>Location (city-level, approximate).</b> With your device's location permission, we capture your approximate location periodically and share a city-level, delayed snapshot with people you're already in touch with. We do not share precise coordinates, and location is never shared with anyone outside your accepted in-touch connections.</li>
-          <li><b>Photos.</b> Photos you choose to attach to a post are uploaded and shown to the people you've opted to share that content tier with.</li>
-          <li><b>Content you post.</b> Post text, check-in messages, and invite details you write.</li>
-          <li><b>Relationship and interaction data.</b> Who you're in touch with, your sharing preferences for each person, check-ins, and invites.</li>
-          <li><b>Push notification token.</b> If you allow notifications, your device registers a token we use to deliver check-in, invite, and relationship alerts. We don't use it for anything else.</li>
-          <li><b>Advertising identifiers.</b> We show ads through Google AdMob, which may collect your device's advertising identifier and general ad interaction data to select and measure ads. See "Third-party services" below.</li>
-        </ul>
-      </section>
-
-      <section id="dont">
-        <h2>What we don't do</h2>
-        <ul class="plain">
-          <li>No public profiles — content is only visible to people you've specifically connected with and opted to share with.</li>
-          <li>No read receipts on requests or invites.</li>
-        </ul>
-      </section>
-
-      <section id="shared">
-        <h2>How data is shared</h2>
-        <p>Data is only visible to people you've formed a mutual "in touch" connection with, and only according to the sharing level (tier) you've chosen for that person. Location presence is only shared with accepted in-touch connections, on a delay, and is retained for a limited rolling window before being deleted.</p>
-      </section>
-
-      <section id="third-party">
-        <h2>Third-party services</h2>
-        <dl class="services">
-          <div class="service">
-            <dt>Supabase</dt>
-            <dd>Hosted in the US West region — our backend database, authentication, and file storage provider. See Supabase's privacy policy at supabase.com/privacy.</dd>
-          </div>
-          <div class="service">
-            <dt>Twilio</dt>
-            <dd>Sends the one-time SMS codes used to sign you in. These messages are limited to authentication codes; we don't send marketing SMS. See Twilio's privacy policy at twilio.com/legal/privacy.</dd>
-          </div>
-          <div class="service">
-            <dt>Google AdMob</dt>
-            <dd>Shows ads in the app and may collect your advertising identifier and ad interaction data for ad selection and measurement. See Google's privacy policy at policies.google.com/privacy.</dd>
-          </div>
-        </dl>
-      </section>
-
-      <section id="retention">
-        <h2>Retention &amp; deletion</h2>
-        <p>Most of your data — profile, relationships, posts, check-ins, and invites — is kept until you delete it or delete your account. Location presence is the one exception: it's automatically retained for a rolling 21-day window and then deleted on its own, regardless of whether you delete your account.</p>
-        <p>You can permanently delete your account at any time from the app: <b>Settings → Delete account</b>. This immediately and permanently removes your profile, relationships, posts, check-ins, invites, photos, push notification token, and location history. This action can't be undone.</p>
-        <div class="callout"><b>Advertising identifiers</b> are managed by your device and Google, not us — deleting your account doesn't reset them; you can do that in your device's system settings.</div>
-      </section>
-
-      <section id="children">
-        <h2>Children's privacy</h2>
-        <p>Lost in Touch is not directed at children under 13 (or the relevant age in your jurisdiction), and we do not knowingly collect data from them.</p>
-      </section>
-
-      <section id="changes">
-        <h2>Changes to this policy</h2>
-        <p>We'll update the "Last updated" date above when this policy changes.</p>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Questions about this policy or your data — reach us directly:</p>
-        <div class="contact-card">zlr20830@gmail.com</div>
-      </section>
-
-    </article>
+<header class="hero">
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Propersh LLC · Live product</span>
+      <h1>Stay close, <em>without pressure.</em></h1>
+      <p class="hero-sub">Lost in Touch is a private way to stay loosely connected with the handful of people you actually care about — no feed to perform for, no streaks, no read receipts. Sign in with your phone number; we text you a one-time code, nothing else.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#texting">How we use SMS</a>
+        <a class="btn btn-ghost" href="privacy-policy.html">Privacy policy</a>
+      </div>
+    </div>
   </div>
+</header>
 
-  <footer class="foot">
-    <span>© 2026 Propersh LLC</span>
-    <span>Lost in Touch — Privacy Policy</span>
-  </footer>
+<section class="features" id="how-it-works">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">How it works</div>
+      <h2>Four quiet ways to keep in touch</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-title"><span class="dot"></span>Ambient presence</div>
+        <p>See roughly where the people you're in touch with are, without either of you doing anything — no check-ins to opt into, just quiet awareness.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-title"><span class="dot"></span>Check in, no reply expected</div>
+        <p>A single tap says "thinking of you." No pressure to write something, no expectation of a response.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-title"><span class="dot"></span>Share on your terms</div>
+        <p>Choose what each person sees — quick moments, bigger life updates, or your more personal side — and change it anytime.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-title"><span class="dot"></span>Plan something, low-key</div>
+        <p>Send an invite, and everyone can just accept, decline, or let it expire — no awkward unanswered texts.</p>
+      </div>
+    </div>
+    <div class="not-row">
+      <span>No public profile</span>
+      <span>No ad-driven feed algorithm</span>
+      <span>No chat threads to keep up with</span>
+    </div>
+  </div>
+</section>
 
-</div>
+<section class="sms" id="texting">
+  <div class="wrap">
+    <div class="sms-card">
+      <div class="section-kicker">Texting &amp; SMS</div>
+      <h2>How we use your phone number</h2>
+      <p class="sms-lede">Lost in Touch uses SMS for exactly one thing: signing you in. Here's the full picture — the same terms shown in the app before anyone consents to a text.</p>
+
+      <dl class="sms-grid">
+        <dt>Message type</dt>
+        <dd>One-time 6-digit authentication codes only. No marketing, no promotions, no newsletters.</dd>
+
+        <dt>Frequency</dt>
+        <dd class="muted">Exactly one message per sign-in attempt — sent only when you request a code, never on a schedule.</dd>
+
+        <dt>Opt-in method</dt>
+        <dd>You enter your phone number on the sign-in screen and check a consent box before a code is sent. No box, no text.</dd>
+
+        <dt>Opt-out</dt>
+        <dd class="muted">Reply STOP to any message to stop receiving texts, or simply stop signing in — we only text you when you ask us to.</dd>
+
+        <dt>Cost</dt>
+        <dd class="muted">Message and data rates may apply from your carrier.</dd>
+
+        <dt>Help</dt>
+        <dd>Reply HELP to any message, or contact <a href="mailto:zlr20830@gmail.com">zlr20830@gmail.com</a>.</dd>
+      </dl>
+
+      <div class="consent-sample">
+        <span class="check">✓</span>
+        <span>Exact in-app consent copy: “I agree to receive a one-time SMS authentication code to sign in. No marketing messages. Message and data rates may apply.”</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <span class="head">Product</span>
+        <a href="#how-it-works">How it works</a>
+        <a href="#texting">Texting &amp; SMS</a>
+      </div>
+      <div class="foot-col">
+        <span class="head">Legal</span>
+        <a href="privacy-policy.html">Privacy policy</a>
+      </div>
+      <div class="foot-col">
+        <span class="head">Company</span>
+        <span style="color: var(--muted)">Propersh LLC</span>
+        <a href="mailto:zlr20830@gmail.com">zlr20830@gmail.com</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Propersh LLC</span>
+      <span>propersh.com</span>
+    </div>
+  </div>
+</footer>
