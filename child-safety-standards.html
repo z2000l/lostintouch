@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>Lost in Touch — Privacy Policy</title>
+<title>Lost in Touch — Child Safety Standards</title>
 <style>
   :root {
     --bg: #f6f7fa;
@@ -68,8 +68,6 @@
     padding: 0 24px 96px;
   }
 
-  /* ---------- header ---------- */
-
   header.mast {
     display: flex;
     align-items: center;
@@ -98,8 +96,6 @@
   .mast-app { font-family: var(--font-display); font-size: 19px; font-weight: 600; letter-spacing: 0.1px; }
   .mast-doc { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
 
-  /* ---------- title block ---------- */
-
   .title-block { padding: 44px 0 8px; max-width: 640px; }
   h1 {
     font-family: var(--font-display);
@@ -120,8 +116,6 @@
   }
   .meta b { color: var(--text); font-weight: 600; }
   .lede { color: var(--text-muted); font-size: 16.5px; max-width: 60ch; }
-
-  /* ---------- layout: nav + article ---------- */
 
   .layout {
     display: grid;
@@ -175,15 +169,8 @@
   ul.plain { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
   ul.plain li { max-width: 62ch; }
 
-  .services { display: flex; flex-direction: column; gap: 18px; }
-  .service {
-    display: grid;
-    grid-template-columns: 128px minmax(0, 1fr);
-    gap: 4px 20px;
-    align-items: baseline;
-  }
-  .service dt { font-family: var(--font-mono); font-size: 13px; color: var(--accent); font-weight: 600; }
-  .service dd { margin: 0; max-width: 56ch; }
+  ol.steps { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
+  ol.steps li { max-width: 62ch; padding-left: 4px; }
 
   .callout {
     background: var(--accent-soft);
@@ -196,16 +183,18 @@
   .callout b { font-weight: 600; }
 
   .contact-card {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 14px 18px;
-    font-family: var(--font-mono);
-    font-size: 14.5px;
+    padding: 16px 20px;
+    max-width: 340px;
   }
+  .contact-card .name { font-weight: 600; font-size: 15px; }
+  .contact-card .role { font-size: 12.5px; color: var(--text-muted); }
+  .contact-card .email { font-family: var(--font-mono); font-size: 14.5px; margin-top: 6px; }
 
   footer.foot {
     margin-top: 44px;
@@ -230,7 +219,6 @@
       margin-bottom: 8px;
     }
     nav.toc a { border-left: none; border-bottom: 2px solid var(--border); padding: 4px 0; }
-    .service { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -244,99 +232,80 @@
     <div class="mark"><span></span><span></span></div>
     <div class="mast-text">
       <span class="mast-app">Lost in Touch</span>
-      <span class="mast-doc">Legal · Privacy Policy</span>
+      <span class="mast-doc">Legal · Child Safety Standards</span>
     </div>
   </header>
 
   <div class="title-block">
-    <h1>Privacy Policy</h1>
+    <h1>Child Safety Standards</h1>
     <div class="meta">
-      <span><b>Last updated</b> — August 11, 2026</span>
+      <span><b>Last updated</b> — August 28, 2026</span>
       <span><b>Operated by</b> — Propersh LLC, propersh.com</span>
     </div>
-    <p class="lede">This policy explains what data Lost in Touch collects, why, and how it's handled — in plain language, section by section.</p>
+    <p class="lede">Lost in Touch has zero tolerance for child sexual abuse and exploitation (CSAE) — in any content, account, or conduct on the platform. This page explains what that means in practice and how to reach us.</p>
   </div>
 
   <div class="layout">
     <nav class="toc" aria-label="Sections">
-      <a href="#collect">Data we collect</a>
-      <a href="#dont">What we don't do</a>
-      <a href="#shared">How data is shared</a>
-      <a href="#third-party">Third-party services</a>
-      <a href="#retention">Retention &amp; deletion</a>
-      <a href="#children">Children's privacy</a>
-      <a href="#changes">Changes</a>
-      <a href="#contact">Contact</a>
+      <a href="#commitment">Our commitment</a>
+      <a href="#who">Who can use it</a>
+      <a href="#model">Why the network is closed</a>
+      <a href="#prohibited">Prohibited content &amp; conduct</a>
+      <a href="#report">How to report</a>
+      <a href="#response">What happens next</a>
+      <a href="#contact">Point of contact</a>
     </nav>
 
     <article>
 
-      <section id="collect">
-        <h2>Data we collect</h2>
-        <ul class="data-list">
-          <li><b>Phone number.</b> Used to identify your account (sign-in via SMS code) and to let you add people you're in touch with by phone number.</li>
-          <li><b>Name.</b> The display name you enter, shown to people you're in touch with.</li>
-          <li><b>Location (city-level, approximate).</b> With your device's location permission, we capture your approximate location periodically and share a city-level, delayed snapshot with people you're already in touch with. We do not share precise coordinates, and location is never shared with anyone outside your accepted in-touch connections.</li>
-          <li><b>Photos.</b> Photos you choose to attach to a post are uploaded and shown to the people you've opted to share that content tier with.</li>
-          <li><b>Content you post.</b> Post text, check-in messages, and invite details you write.</li>
-          <li><b>Relationship and interaction data.</b> Who you're in touch with, your sharing preferences for each person, check-ins, and invites.</li>
-          <li><b>Push notification token.</b> If you allow notifications, your device registers a token we use to deliver check-in, invite, and relationship alerts. We don't use it for anything else.</li>
-          <li><b>Advertising identifiers.</b> We show ads through Google AdMob, which may collect your device's advertising identifier and general ad interaction data to select and measure ads. See "Third-party services" below.</li>
-        </ul>
+      <section id="commitment">
+        <h2>Our commitment</h2>
+        <p>We do not tolerate child sexual abuse material (CSAM) or the sexual exploitation of minors in any form, anywhere on Lost in Touch. This applies to every account, every post, every message, and every photo — no exceptions.</p>
+        <p>Propersh LLC is a U.S. company, and we comply with applicable U.S. child-safety law, including reporting apparent CSAM to the National Center for Missing &amp; Exploited Children's CyberTipline as required under 18 U.S.C. § 2258A.</p>
       </section>
 
-      <section id="dont">
-        <h2>What we don't do</h2>
+      <section id="who">
+        <h2>Who can use it</h2>
+        <p>Lost in Touch is not directed at children under 13 (or the relevant minimum age in your jurisdiction), and we do not knowingly allow them to hold accounts. Signing in requires a real phone number verified by SMS code — there are no anonymous or pseudonymous accounts.</p>
+      </section>
+
+      <section id="model">
+        <h2>Why the network is closed</h2>
+        <p>Lost in Touch has no public profiles, no search or discovery of other users, and no algorithmic feed connecting strangers. Every connection starts with one person sending a request to a specific phone number, which the other person has to explicitly accept before either of you can see anything about the other. This is a deliberate design choice — it's built for staying in touch with people you already know, not for meeting new people — and it substantially limits the surface area for a child to be contacted by a stranger through the app.</p>
+      </section>
+
+      <section id="prohibited">
+        <h2>Prohibited content &amp; conduct</h2>
         <ul class="plain">
-          <li>No public profiles — content is only visible to people you've specifically connected with and opted to share with.</li>
-          <li>No read receipts on requests or invites.</li>
+          <li>Any image, video, or text depicting or sexualizing a minor.</li>
+          <li>Grooming, solicitation, or any attempt to arrange sexual contact with a minor.</li>
+          <li>Using the app to contact or exploit a minor in any other way.</li>
         </ul>
       </section>
 
-      <section id="shared">
-        <h2>How data is shared</h2>
-        <p>Data is only visible to people you've formed a mutual "in touch" connection with, and only according to the sharing level (tier) you've chosen for that person. Location presence is only shared with accepted in-touch connections, on a delay, and is retained for a limited rolling window before being deleted.</p>
+      <section id="report">
+        <h2>How to report a concern</h2>
+        <p>Lost in Touch doesn't yet have an in-app "report" button — we're a small, actively developed app, and that's a gap we're aware of and plan to close. Right now, the way to reach us is directly by email, below. Tell us as much as you can: the account or phone number involved, and what you saw.</p>
+        <div class="callout"><b>If a child is in immediate danger, contact local law enforcement or emergency services first</b> — this email goes to the app's operator, not to police.</div>
       </section>
 
-      <section id="third-party">
-        <h2>Third-party services</h2>
-        <dl class="services">
-          <div class="service">
-            <dt>Supabase</dt>
-            <dd>Hosted in the US West region — our backend database, authentication, and file storage provider. See Supabase's privacy policy at supabase.com/privacy.</dd>
-          </div>
-          <div class="service">
-            <dt>Twilio</dt>
-            <dd>Sends the one-time SMS codes used to sign you in. These messages are limited to authentication codes; we don't send marketing SMS. See Twilio's privacy policy at twilio.com/legal/privacy.</dd>
-          </div>
-          <div class="service">
-            <dt>Google AdMob</dt>
-            <dd>Shows ads in the app and may collect your advertising identifier and ad interaction data for ad selection and measurement. See Google's privacy policy at policies.google.com/privacy.</dd>
-          </div>
-        </dl>
-      </section>
-
-      <section id="retention">
-        <h2>Retention &amp; deletion</h2>
-        <p>Most of your data — profile, relationships, posts, check-ins, and invites — is kept until you delete it or delete your account. Location presence is the one exception: it's automatically retained for a rolling 21-day window and then deleted on its own, regardless of whether you delete your account.</p>
-        <p>You can permanently delete your account at any time from the app: <b>Settings → Delete account</b>. This immediately and permanently removes your profile, relationships, posts, check-ins, invites, photos, push notification token, and location history. This action can't be undone.</p>
-        <div class="callout"><b>Advertising identifiers</b> are managed by your device and Google, not us — deleting your account doesn't reset them; you can do that in your device's system settings.</div>
-      </section>
-
-      <section id="children">
-        <h2>Children's privacy</h2>
-        <p>Lost in Touch is not directed at children under 13 (or the relevant age in your jurisdiction), and we do not knowingly collect data from them.</p>
-      </section>
-
-      <section id="changes">
-        <h2>Changes to this policy</h2>
-        <p>We'll update the "Last updated" date above when this policy changes.</p>
+      <section id="response">
+        <h2>What happens next</h2>
+        <ol class="steps">
+          <li>We review every report ourselves. Child-safety reports are treated as the highest priority we handle.</li>
+          <li>If we confirm a violation, we remove the content and/or terminate the account immediately.</li>
+          <li>Where legally required, we report apparent CSAM to the NCMEC CyberTipline and cooperate with law enforcement, including preserving relevant records as the law requires.</li>
+        </ol>
       </section>
 
       <section id="contact">
-        <h2>Contact</h2>
-        <p>Questions about this policy or your data — reach us directly:</p>
-        <div class="contact-card">zlr20830@gmail.com</div>
+        <h2>Point of contact</h2>
+        <p>Reports and questions about child safety on Lost in Touch go directly to:</p>
+        <div class="contact-card">
+          <span class="name">Zhijun He</span>
+          <span class="role">Propersh LLC</span>
+          <span class="email">zlr20830@gmail.com</span>
+        </div>
       </section>
 
     </article>
@@ -344,7 +313,7 @@
 
   <footer class="foot">
     <span>© 2026 Propersh LLC</span>
-    <span><a href="child-safety-standards.html">Child Safety Standards</a> · Lost in Touch — Privacy Policy</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a> · Lost in Touch — Child Safety Standards</span>
   </footer>
 
 </div>

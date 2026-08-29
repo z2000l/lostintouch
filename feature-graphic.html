@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1024px;
+    height: 500px;
+    background: #111111;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .stage {
+    position: relative;
+    width: 1024px;
+    height: 500px;
+  }
+
+  /* subtle ambient glow */
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+  }
+  .glow-1 {
+    width: 420px;
+    height: 420px;
+    background: #5680E0;
+    top: -140px;
+    left: 620px;
+  }
+  .glow-2 {
+    width: 320px;
+    height: 320px;
+    background: #DEDEDE;
+    bottom: -160px;
+    left: -80px;
+    opacity: 0.12;
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 72px;
+    box-sizing: border-box;
+  }
+
+  .mark {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    flex: none;
+    margin-right: 64px;
+  }
+  .circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    top: 35px;
+  }
+  .circle-light {
+    left: 10px;
+    background: #DEDEDE;
+  }
+  .circle-blue {
+    left: 90px;
+    background: #5680E0;
+    mix-blend-mode: normal;
+  }
+  .circle-overlap {
+    position: absolute;
+    left: 90px;
+    top: 35px;
+    width: 70px;
+    height: 150px;
+    background: #86A6EA;
+    border-radius: 0 75px 75px 0 / 0 75px 75px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .name {
+    font-size: 76px;
+    font-weight: 700;
+    color: #FAFAFA;
+    letter-spacing: -1px;
+    line-height: 1.05;
+    margin: 0;
+  }
+
+  .tagline {
+    margin-top: 18px;
+    font-size: 32px;
+    font-weight: 400;
+    color: #9AA0A6;
+    letter-spacing: 0.2px;
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="content">
+      <div class="mark">
+        <div class="circle circle-light"></div>
+        <div class="circle circle-blue"></div>
+        <div class="circle-overlap"></div>
+      </div>
+      <div class="text">
+        <p class="name">Lost in Touch</p>
+        <p class="tagline">Stay close, without pressure</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
